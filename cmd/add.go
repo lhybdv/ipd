@@ -39,6 +39,7 @@ func Add(name, fPath string) string {
 		fmt.Println(err)
 		return ""
 	}
+
 	execCmd("cp", false, "-r", fPath, ipfsStaging)
 	fileName := filepath.Base(fPath)
 	out := execCmd("docker", true, "exec", name, "ipfs", "add", "-r", fmt.Sprintf("/export/%s", fileName))

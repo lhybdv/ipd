@@ -5,7 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/mitchellh/go-homedir"
-	"github.com/spf13/viper"
+	//"github.com/spf13/viper"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -19,7 +19,8 @@ const (
 )
 
 func getIpfsDir() string {
-	ipfsDir := viper.GetString("ipfs_docker")
+	//ipfsDir := viper.GetString("ipfs_docker")
+	ipfsDir := "~/ipfs_docker"
 	ipfsDir, err := homedir.Expand(ipfsDir)
 	if err != nil {
 		fmt.Printf("ipfs_docker setting is invalid. %v\n", err)
